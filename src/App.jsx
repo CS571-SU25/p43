@@ -9,13 +9,19 @@ import ActivitiesPage from './pages/ActivitiesPage';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/sights" element={<SightsPage />} />
-      <Route path="/foods" element={<FoodsPage />} />
-      <Route path="/malls" element={<MallsPage />} />
-      <Route path="/activities" element={<ActivitiesPage />} />
-    </Routes>
+
+
+    <div className="d-flex flex-column min-vh-100">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sights" element={<SightsPage />} />
+        <Route path="/foods" element={<FoodsPage />} />
+        <Route path="/malls" element={<MallsPage />} />
+        <Route path="/activities" element={<ActivitiesPage />} />
+      </Routes>
+    </div>
+
+
   );
 }
 
