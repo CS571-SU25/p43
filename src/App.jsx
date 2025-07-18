@@ -1,19 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Route, Routes, HashRouter} from 'react-router'
-import AboutUs from './components/AboutUs'
-import OtherInfo from './components/OtherInfo'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import HomePage from './pages/HomePage';
+import SightsPage from './pages/SightsPage';
+import FoodsPage from './pages/FoodsPage';
+import MallsPage from './pages/MallsPage';
+import ActivitiesPage from './pages/ActivitiesPage';
 
 
 function App() {
-  return <HashRouter>
+  return (
     <Routes>
-      <Route path="/about-us" element={<AboutUs/>}></Route>
-      <Route path="/other-info" element={<OtherInfo/>}></Route>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/sights" element={<SightsPage />} />
+      <Route path="/foods" element={<FoodsPage />} />
+      <Route path="/malls" element={<MallsPage />} />
+      <Route path="/activities" element={<ActivitiesPage />} />
     </Routes>
-  </HashRouter>
+  );
 }
 
-export default App
+
+export default App;
+
