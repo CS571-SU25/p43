@@ -5,11 +5,15 @@ function SightsPage() {
   return (
     <>
       <Navbar />
-      <div className="container mt-5">
-        <h2>Popular Sights in Beijing</h2>
-        <p>Explore famous landmarks like the Forbidden City, Temple of Heaven, and more.</p>
-        {/* Add cards or map here later */}
+      <div className="d-flex flex-column min-vh-100">
+        <div className="container mt-5">
+          <h2>Popular Sights in Beijing</h2>
+          <p>Explore famous landmarks like the Forbidden City, Temple of Heaven, and more.</p>
+          {/* Add cards or map here later */}
+        </div>
+
       </div>
+
       <Footer />
     </>
   );

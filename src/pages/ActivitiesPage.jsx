@@ -5,11 +5,16 @@ function ActivitiesPage() {
   return (
     <>
       <Navbar />
-      <div className="container mt-5">
-        <h2>Things to Do in Beijing</h2>
-        <p>Find fun activities like hutong tours, tea ceremonies, and cultural shows.</p>
-        {/* Add interactive elements later */}
+      <div className="d-flex flex-column min-vh-100">
+        <div className="container mt-5">
+          <h2>Things to Do in Beijing</h2>
+          <p>Find fun activities like hutong tours, tea ceremonies, and cultural shows.</p>
+          {/* Add interactive elements later */}
+        </div>
+
+
       </div>
+
       <Footer />
     </>
   );
