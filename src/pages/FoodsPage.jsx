@@ -17,7 +17,6 @@ L.Icon.Default.mergeOptions({
 function FoodsPage() {
   const { places, loading, error } = useGeoapify('catering.restaurant', 100);
 
-
   const chainKeywords = [
     'mcdonald', 'starbucks', 'kfc', 'burger king', 'subway',
     'pizza hut', 'dunkin', 'taco bell', 'domino', 'papa john',
@@ -57,27 +56,39 @@ function FoodsPage() {
             className="leaflet-container"
           >
             <TileLayer
-              attribution='&copy; <atps://www.openstreetmap.org/copyright contributors'
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">rs'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {localPlaces.map((place) => (
-              <Marker
-                key={place.properties.place_id}
-                position={[place.properties.lat, place.properties.lon]}
-              >
-                <Popup>
-                  <strong>{place.properties.name || "Unnamed Restaurant"}</strong><br />
-                  {place.properties.categories?.join(", ") || "No description"}<br />
-                  <a
-                    href={`https://www.openstreetmap.org/?mlat=${place.properties.lat}&mlon=${place.properties.lon}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View on Map
-                  </a>
-                </Popup>
-              </Marker>
-            ))}
+            {localPlaces.map((place) => {
+              const name = place.properties.name || "Unnamed Restaurant";
+              const gaodeLink = `https://uri.amap.com/navigation?to=${place.properties.lon},${place.properties.lat},${encodeURIComponent(name)}&mode=car&policy=1&callnative=1`;
+
+              return (
+                <Marker
+                  key={place.properties.place_id}
+                  position={[place.properties.lat, place.properties.lon]}
+                >
+                  <Popup>
+                    <strong>{name}</strong><br />
+                    <a
+                      href={`https://www.openstreetmap.org/?mlat=${place.properties.lat}&mlon=${place.properties.lon}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View on Map
+                    </a>
+                    <br />
+                    <a
+                      href={gaodeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Navigate with 高德地图
+                    </a>
+                  </Popup>
+                </Marker>
+              );
+            })}
           </MapContainer>
         )}
       </div>

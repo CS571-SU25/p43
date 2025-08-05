@@ -7,9 +7,10 @@ const SightsPage = () => {
   const { places, loading, error } = useGeoapify();
 
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
-      <div className="container">
+
+      <div className="container flex-grow-1">
         <h1 className="my-4">Popular Sights in Beijing</h1>
         {loading && <p>Loading sights...</p>}
         {error && <p>Error loading sights.</p>}
@@ -21,9 +22,11 @@ const SightsPage = () => {
           ))}
         </div>
       </div>
+
       <Footer />
-    </>
+    </div>
   );
 };
+
 
 export default SightsPage;

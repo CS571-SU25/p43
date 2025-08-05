@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -6,7 +6,7 @@ import useGeoapify from '../hooks/useGeoapify';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-// Fix Leaflet marker icon issue
+
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -14,7 +14,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-// Helper function to match mall names to official websites
+
 const getMallWebsite = (name) => {
   const lower = (name || '').toLowerCase().replace(/\s+/g, '').replace(/购物中心|商场|大厦|广场/g, '');
 
@@ -41,7 +41,7 @@ const getMallWebsite = (name) => {
   return null;
 };
 
-// Helper function to get opening hours
+
 const getMallHours = (name) => {
   const lower = (name || '').toLowerCase();
 

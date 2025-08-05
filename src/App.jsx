@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import SightsPage from './pages/SightsPage';
 import FoodsPage from './pages/FoodsPage';
 import MallsPage from './pages/MallsPage';
-import ActivitiesPage from './pages/ActivitiesPage';
+
 
 
 function App() {
@@ -19,7 +19,6 @@ function App() {
         <Route path="/sights" element={<SightsPage />} />
         <Route path="/foods" element={<FoodsPage />} />
         <Route path="/malls" element={<MallsPage />} />
-        <Route path="/activities" element={<ActivitiesPage />} />
       </Routes>
 
 
