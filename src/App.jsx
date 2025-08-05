@@ -12,6 +12,8 @@ function App() {
 
 
     <div className="d-flex flex-column min-vh-100">
+
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/sights" element={<SightsPage />} />
@@ -19,6 +21,9 @@ function App() {
         <Route path="/malls" element={<MallsPage />} />
         <Route path="/activities" element={<ActivitiesPage />} />
       </Routes>
+
+
+
     </div>
 
 
